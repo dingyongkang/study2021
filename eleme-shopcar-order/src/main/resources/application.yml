@@ -1,0 +1,30 @@
+server:
+  port: 8089
+spring:
+  application:
+    name: eleme-shopcar-order
+  zipkin:
+      base-url: http://localhost:8050
+  sleuth:
+      sampler:
+        probability: 1.0
+#admin
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh,health,info
+  endpoint:
+    health:
+      show-details: always
+feign:
+  hystrix:
+    enabled: true
+#hystric默认请求超过1秒未响应就降级，配置为3秒未响应再降级
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds:  3000

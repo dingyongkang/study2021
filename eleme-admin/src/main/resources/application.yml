@@ -1,0 +1,9 @@
+server:
+  port: 8040
+spring:
+  application:
+    name: eleme-admin
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8010/eureka/

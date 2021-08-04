@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.qf</groupId>
+    <artifactId>eleme-parent</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>../eleme-eureka</module>
+        <module>../eleme-zuul</module>
+        <module>../eleme-model</module>
+        <module>../eleme-config</module>
+        <module>../eleme-admin</module>
+        <module>../eleme-zipkin</module>
+        <module>../eleme-user</module>
+        <module>../eleme-utils</module>
+        <module>../eleme-goods</module>
+        <module>../eleme-shopcar-order</module>
+        <module>../eleme-revenue</module>
+        <module>../eleme-common</module>
+    </modules>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.3.RELEASE</version>
+        <relativePath/>
+    </parent>
+    <dependencyManagement>
+        <dependencies>
+            <!--标志是spring cloud工程-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Finchley.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--自动生成实体类get set方法-->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.16.22</version>
+                <scope>provided</scope>
+            </dependency>
+            <!--自动生成接口文档-->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>2.9.2</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>2.9.2</version>
+            </dependency>
+            <!--redis-->
+            <dependency>
+                <groupId>redis.clients</groupId>
+                <artifactId>jedis</artifactId>
+                <version>2.9.0</version>
+            </dependency>
+            <!--elasticsearch-->
+            <dependency>
+                <groupId>org.elasticsearch</groupId>
+                <artifactId>elasticsearch</artifactId>
+                <version>6.5.0</version>
+            </dependency>
+            <!--elasticsearch的高版本-->
+            <dependency>
+                <groupId>org.elasticsearch.client</groupId>
+                <artifactId>elasticsearch-rest-high-level-client</artifactId>
+                <version>6.5.1</version>
+            </dependency>
+            <!--转json-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>1.2.54</version>
+            </dependency>
+            <!--mybatis-->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>2.0.0</version>
+            </dependency>
+            <!--shiro安全框架-->
+            <dependency>
+                <groupId>org.apache.shiro</groupId>
+                <artifactId>shiro-spring</artifactId>
+                <version>1.4.0</version>
+            </dependency>
+            <!--mybatis分页插件-->
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>1.2.10</version>
+            </dependency>
+            <!--发送邮件-->
+            <dependency >
+                <groupId >com.sun.mail</groupId >
+                <artifactId >javax.mail</artifactId >
+                <version >1.5.4 </version >
+            </dependency >
+            <!--定时任务-->
+            <dependency>
+                <groupId>org.quartz-scheduler</groupId>
+                <artifactId>quartz</artifactId>
+                <version>2.2.3</version>
+            </dependency>
+            <!-- 七牛-->
+            <dependency>
+                <groupId>com.qiniu</groupId>
+                <artifactId>qiniu-java-sdk</artifactId>
+                <version>[7.2.0, 7.2.99]</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.code.gson</groupId>
+                <artifactId>gson</artifactId>
+                <version>2.8.5</version>
+                <scope>compile</scope>
+            </dependency>
+            <!--阿里巴巴(短信验证码可用)-->
+            <dependency>
+                <groupId>com.aliyun</groupId>
+                <artifactId>aliyun-java-sdk-core</artifactId>
+                <version>4.1.0</version>
+            </dependency>
+            <!--支付宝沙箱-->
+            <dependency>
+                <groupId>com.alipay.sdk</groupId>
+                <artifactId>alipay-sdk-java</artifactId>
+                <version>3.3.49.ALL</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>

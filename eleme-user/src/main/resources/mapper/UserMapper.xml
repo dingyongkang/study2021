@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qf.dao.UserDao">
+    <resultMap id="BaseResult" type="com.qf.pojo.User">
+        <id column="id" property="id"></id>
+        <result column="uname" property="uname"></result>
+        <result column="pass" property="pass"></result>
+        <result column="uphoto" property="uphoto"></result>
+        <result column="tel" property="tel"></result>
+        <result column="addr1" property="addr1"></result>
+        <result column="addr2" property="addr2"></result>
+        <result column="addr3" property="addr3"></result>
+    </resultMap>
+
+    <select id="findByUserName" parameterType="string" resultMap="BaseResult">
+            select * from user where uname =#{uname}
+        </select>
+
+    <select id="findByUserTel" parameterType="string" resultMap="BaseResult">
+        select * from user where tel =#{tel}
+    </select>
+
+    <insert id="addTel" parameterType="string">
+        insert into user(id,tel) values(null,#{tel})
+    </insert>
+
+
+    <update id="update" parameterType="com.qf.pojo.User">
+        update user
+        <trim prefix="set" suffixOverrides=",">
+            <if test="uname!=null">uname=#{uname},</if>
+            <if test="pass!=null">pass=#{pass},</if>
+            <if test="uphoto!=null">uphoto=#{uphoto},</if>
+            <if test="addr1!=null">addr1=#{addr1},</if>
+            <if test="addr2!=null">addr2=#{addr2},</if>
+            <if test="addr3!=null">addr3=#{addr3},</if>
+        </trim>
+        where tel=#{tel}
+    </update>
+
+</mapper>

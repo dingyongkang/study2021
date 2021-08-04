@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    config:
+      name: neo-config
+      profile: dev
+      discovery:
+        serviceId: eleme-config
+        enabled: true
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8010/eureka/

@@ -1,0 +1,16 @@
+server:
+  port: 8030
+spring:
+  application:
+    name: eleme-config
+  profiles:
+    active: native  # 配置使用本地储存
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:properties/ # 搜索src/main/resource 下的properties
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8010/eureka/

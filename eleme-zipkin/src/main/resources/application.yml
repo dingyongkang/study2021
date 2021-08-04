@@ -1,0 +1,15 @@
+server:
+  port: 8050
+spring:
+  application:
+    name: eleme-zipkin
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8010/eureka/
+#zipkin启动报错无法解决的问题
+management:
+  metrics:
+    web:
+      server:
+        auto-time-requests: false
